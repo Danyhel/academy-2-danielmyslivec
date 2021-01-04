@@ -88,11 +88,14 @@ class Component(KBCEnvHandler):
                 writer.writerow(l)
 
         # create output table manifest file
-        self.configuration.write_table_manifest(file_name=RESULT_FILE_PATH, primary_key=['row_number'], incremental=True)
+        self.configuration.write_table_manifest(file_name=RESULT_FILE_PATH,
+                                                primary_key=['row_number'],
+                                                incremental=True)
 
         # write new state to file
         current_state = str(datetime.date.today())
         self.write_state_file({"last_update": current_state})
+
 
 """
         Main entrypoint

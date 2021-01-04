@@ -20,7 +20,7 @@
   },
   "parameters": {
     "#api_token": "demo",
-    "print_hello": true,
+    "print_rows": true,
     "debug": true
   },
   "image_parameters": {

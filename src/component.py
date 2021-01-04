@@ -95,6 +95,7 @@ class Component(KBCEnvHandler):
         # write new state to file
         current_state = str(datetime.date.today())
         self.write_state_file({"last_update": current_state})
+        logging.info('Updating last status ...')
 
 
 """

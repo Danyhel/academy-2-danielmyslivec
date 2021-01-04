@@ -4,7 +4,6 @@ Template Component main class.
 '''
 import csv
 import datetime
-import json
 import logging
 import os
 import sys
@@ -60,8 +59,6 @@ class Component(KBCEnvHandler):
         Main execution code
         '''
 
-        DATA_FOLDER = self.data_path
-
         # get state file
         last_state = self.get_state_file()
         date_updated = last_state.get("last_update", " ")
@@ -83,7 +80,7 @@ class Component(KBCEnvHandler):
             writer = csv.DictWriter(out, fieldnames=new_columns, lineterminator='\n', delimiter=',')
             writer.writeheader()
             for index, l in enumerate(reader):
-                # print line
+                # printing line
                 if PARAM_PRINT_LINES:
                     print(f'Printing line {index}: {l}')
                 # add row number
